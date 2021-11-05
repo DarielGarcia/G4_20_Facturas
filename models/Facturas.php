@@ -13,7 +13,7 @@
         public function get_factura($ID){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT * FROM ma_facturas WHERE ESTADO = 'F' OR ESTADO = 'A' AND ID = ?";
+            $sql="SELECT * FROM ma_facturas WHERE ID = ?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1,$ID);
             $sql->execute();
